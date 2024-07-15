@@ -9,12 +9,12 @@ from inference_assistant import inference
 from utils import create_assistant_from_config_file, upload_to_openai, export_assistant
 
 st.set_page_config(
-    page_title="MG API Assistant PoC",
+    page_title="10DLC to RCS Converter PoC",
     page_icon="🤖",
     layout="wide"
 )
 
-st.title("MG API Assistant PoC")
+st.title("10DLC to RCS Converter PoC")
 
 openaiKey = st.secrets["OPENAI_API_KEY"]
 

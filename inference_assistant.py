@@ -1,4 +1,4 @@
-# THis file contains the code for the inference of the assistant
+# This file contains the code for the inference of the assistant
 # Path: inference_assistant.py
 
 import streamlit as st
@@ -9,7 +9,7 @@ from exportChat import export_chat
 def inference(id_assistente):
     if "msg_bot" not in st.session_state:
         st.session_state.msg_bot = []
-        st.session_state.msg_bot.append("Hi🤗, I'm the MG API AI assistant. How can I help you?")
+        st.session_state.msg_bot.append("Hi 🤗, I can convert 10DLC campaign data into RCS form fields. Paste the Campaign JSON file in the field below and wait for the response.")
         st.session_state.msg = []
         
         try :
@@ -61,11 +61,11 @@ def inference(id_assistente):
             st.rerun()
 
 
-    input = st.chat_input(placeholder="🖊 Write a message...")
+    input = st.chat_input(placeholder="🖊 Paste the Campaign JSON file here")
 
     if input:
         st.session_state.msg.append(input)
-        with st.spinner("🤖 Thinking..."):
+        with st.spinner("🤖 Processing..."):
             run_id = get_response(input)
             status = check_status(run_id)
             
